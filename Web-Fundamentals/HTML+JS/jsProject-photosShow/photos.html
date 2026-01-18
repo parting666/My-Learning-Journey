@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="photosOnlyCss.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>
+                    Picsum图片画廊
+                </h1>
+                <p>从Picsum API获取的精美图片集合</p>
+            </div>
+        </div>
+    </header>
+    <main class="container">
+        <div id="loading">
+            <div class="spinner"></div>
+        </div>
+      
+        <div id="error">
+            <p>加载图片时发生错误，请稍后重试</p>
+        </div>
+    
+        <div id="photo-container"></div>
+    </main>
+ 
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2023 Picsum图片画廊</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const loadingElement=document.getElementById("loading");
+        const errorElement=document.getElementById("error");
+        const photoContainer=document.getElementById("photo-container");
+
+        const apiUrl="https://picsum.photos/v2/list?page=2&limit=50";
+
+          async function fetchPhotos() {
+            try {
+                const response = await fetch(apiUrl);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP错误，状态码: ${response.status}`);
+                }
+                
+                const photos = await response.json();
+                displayPhotos(photos);
+                
+            } catch (error) {
+                console.error('获取图片失败:', error);
+                loadingElement.style.display = 'none';
+                errorElement.style.display = 'block';
+                 }
+           };
+           function displayPhotos(photos) {
+            photoContainer.innerHTML = '';
+
+            photos.forEach(photo => {
+                const photoCard = document.createElement('div');
+                photoCard.className = 'photo-card';
+               
+                photoCard.innerHTML = `
+                    <div class="photo-container">
+                        <img 
+                            src="${photo.download_url}" 
+                            alt="${photo.author}" 
+                            loading="lazy"
+                        >
+                        <div class="photo-overlay">
+                            <p class="photo-author">${photo.author}</p>
+                        </div>
+                    </div>
+                    <div class="photo-info">
+                        <div class="photo-meta">
+                            <span>图片ID: ${photo.id}</span>
+                            <a href="${photo.url}" target="_blank" class="photo-link">
+                               查看原图
+                            </a>
+                        </div>
+                    </div>
+                `;
+                
+                photoContainer.appendChild(photoCard);
+            });     
+        
+             loadingElement.style.display = 'none';
+             photoContainer.style.display = 'grid';
+        }
+        
+        document.addEventListener('DOMContentLoaded', fetchPhotos);
+    </script>
+</body>
+</html>

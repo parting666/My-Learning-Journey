@@ -1,0 +1,26 @@
+{
+  "name": "simple-node-server",
+  "version": "1.0.0",
+  "description": "一个简单的Node.js服务器项目",
+  "main": "app.js",
+  "scripts": {
+    "start": "node databaseDelete.js",
+    "dev": "nodemon databaseDelete.js"
+  },
+  "keywords": [
+    "node",
+    "server",
+    "api"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "dependencies": {
+    "axios": "1.1.1",
+    "express": "^5.1.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.14.3"
+  }
+}
