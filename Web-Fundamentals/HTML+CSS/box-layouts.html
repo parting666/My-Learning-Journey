@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10种基础CSS布局属性示例</title>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        /* 基础样式重置与通用设置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        main {
+            padding-bottom: 3rem;
+        }
+        
+        section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        section h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        section h2 i {
+            margin-right: 10px;
+            color: #3498db;
+        }
+        
+        section p {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+        
+        .example-box {
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+        
+        /* 示例1: 块级元素布局 */
+        .block-example .box {
+            display: block;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 4px;
+            color: white;
+        }
+        
+        .block-example .box1 { background-color: #3498db; }
+        .block-example .box2 { background-color: #2ecc71; }
+        .block-example .box3 { background-color: #9b59b6; }
+        
+        /* 示例2: 行内元素布局 */
+        .inline-example span {
+            display: inline;
+            margin: 0 10px;
+            padding: 8px 12px;
+            border-radius: 4px;
+            color: white;
+        }
+        
+        .inline-example .item1 { background-color: #3498db; }
+        .inline-example .item2 { background-color: #2ecc71; }
+        .inline-example .item3 { background-color: #9b59b6; }
+        .inline-example .item4 { background-color: #34495e; }
+        
+        /* 示例3: 行内块布局 */
+        .inline-block-example .item {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            border-radius: 4px;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+            transition: transform 0.3s ease;
+        }
+        
+        .inline-block-example .item:hover {
+            transform: scale(1.05) rotate(3deg);
+        }
+        
+        .inline-block-example .item1 { background-color: #3498db; }
+        .inline-block-example .item2 { background-color: #2ecc71; }
+        .inline-block-example .item3 { background-color: #9b59b6; }
+        
+        /* 示例4: Flexbox布局 */
+        .flex-example .flex-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            background-color: #f1f1f1;
+            padding: 20px;
+            border-radius: 4px;
+            min-height: 120px;
+        }
+        
+        .flex-example .flex-item {
+            width: 60px;
+            height: 60px;
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            line-height: 60px;
+            border-radius: 4px;
+            margin: 5px;
+        }
+        
+        /* 示例5: Grid布局 */
+        .grid-example .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            background-color: #f1f1f1;
+            padding: 15px;
+            border-radius: 4px;
+        }
+        
+        .grid-example .grid-item {
+            background-color: #2ecc71;
+            color: white;
+            padding: 15px;
+            border-radius: 4px;
+            text-align: center;
+        }
+        
+        /* 示例6: 浮动布局 */
+        .float-example::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        .float-example .left {
+            float: left;
+            width: 48%;
+            background-color: #e3f2fd;
+            padding: 15px;
+            border-radius: 4px;
+        }
+        
+        .float-example .right {
+            float: right;
+            width: 48%;
+            background-color: #e8f5e9;
+            padding: 15px;
+            border-radius: 4px;
+        }
+        
+        .float-example h3 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        /* 示例7: 定位布局 */
+        .position-example {
+            position: relative;
+            height: 200px;
+            background-color: #f1f1f1;
+            border-radius: 4px;
+        }
+        
+        .position-example .box {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            color: white;
+            text-align: center;
+            line-height: 80px;
+            border-radius: 4px;
+        }
+        
+        .position-example .top-left {
+            top: 15px;
+            left: 15px;
+            background-color: #3498db;
+        }
+        
+        .position-example .center {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #2ecc71;
+        }
+        
+        .position-example .bottom-right {
+            bottom: 15px;
+            right: 15px;
+            background-color: #9b59b6;
+        }
+        
+        /* 示例8: 表格布局 */
+        .table-example .table-container {
+            display: table;
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .table-example .table-row {
+            display: table-row;
+        }
+        
+        .table-example .table-cell {
+            display: table-cell;
+            padding: 12px;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+        }
+        
+        .table-example .table-row:first-child {
+            background-color: #f1f1f1;
+            font-weight: bold;
+        }
+        
+        .table-example .table-row:nth-child(3) {
+            background-color: #f9f9f9;
+        }
+        
+        /* 示例9: 多列布局 */
+        .columns-example .content {
+            columns: 3;
+            column-gap: 20px;
+            column-rule: 1px solid #e0e0e0;
+        }
+        
+        .columns-example p {
+            margin-bottom: 15px;
+        }
+        
+        /* 示例10: 响应式布局 */
+        .responsive-example .container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .responsive-example .sidebar {
+            background-color: #e3f2fd;
+            padding: 15px;
+            border-radius: 4px;
+        }
+        
+        .responsive-example .main-content {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 4px;
+        }
+        
+        .responsive-example h3 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        @media (min-width: 768px) {
+            .responsive-example .container {
+                flex-direction: row;
+            }
+            
+            .responsive-example .sidebar {
+                flex: 1;
+            }
+            
+            .responsive-example .main-content {
+                flex: 3;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>10种基础CSS布局属性示例</h1>
+            <p>使用原生CSS实现的各种布局技术展示</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- 示例1: 块级元素布局 -->
+        <section>
+            <h2><i class="fa fa-cubes"></i>1. 块级元素布局 (display: block)</h2>
+            <p>块级元素独占一行，宽度默认填满父容器，可以设置宽高和边距。</p>
+            <div class="example-box block-example">
+                <div class="box box1">块级元素 1</div>
+                <div class="box box2">块级元素 2</div>
+                <div class="box box3">块级元素 3</div>
+            </div>
+        </section>
+
+        <!-- 示例2: 行内元素布局 -->
+        <section>
+            <h2><i class="fa fa-align-left"></i>2. 行内元素布局 (display: inline)</h2>
+            <p>行内元素不独占一行，与其他行内元素并排显示，不能设置宽高。</p>
+            <div class="example-box inline-example">
+                <span class="item1">行内元素 1</span>
+                <span class="item2">行内元素 2</span>
+                <span class="item3">行内元素 3</span>
+                <span class="item4">行内元素 4</span>
+            </div>
+        </section>
+
+        <!-- 示例3: 行内块布局 -->
+        <section>
+            <h2><i class="fa fa-th"></i>3. 行内块布局 (display: inline-block)</h2>
+            <p>行内块元素兼具行内元素和块级元素特性，可以并排显示且能设置宽高。</p>
+            <div class="example-box inline-block-example">
+                <div class="item item1">元素 1</div>
+                <div class="item item2">元素 2</div>
+                <div class="item item3">元素 3</div>
+            </div>
+        </section>
+
+        <!-- 示例4: Flexbox布局 -->
+        <section>
+            <h2><i class="fa fa-align-justify"></i>4. Flexbox布局 (display: flex)</h2>
+            <p>Flexbox是一维布局模型，适合对齐和分布元素，具有强大的灵活性。</p>
+            <div class="example-box flex-example">
+                <div class="flex-container">
+                    <div class="flex-item">1</div>
+                    <div class="flex-item">2</div>
+                    <div class="flex-item">3</div>
+                    <div class="flex-item">4</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 示例5: Grid布局 -->
+        <section>
+            <h2><i class="fa fa-th-large"></i>5. Grid布局 (display: grid)</h2>
+            <p>Grid是二维布局模型，适合创建复杂的网格结构，能够同时处理行和列。</p>
+            <div class="example-box grid-example">
+                <div class="grid-container">
+                    <div class="grid-item">Grid 项目 1</div>
+                    <div class="grid-item">Grid 项目 2</div>
+                    <div class="grid-item">Grid 项目 3</div>
+                    <div class="grid-item">Grid 项目 4</div>
+                    <div class="grid-item">Grid 项目 5</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 示例6: 浮动布局 -->
+        <section>
+            <h2><i class="fa fa-arrows-h"></i>6. 浮动布局 (float)</h2>
+            <p>浮动元素会脱离正常文档流，向左或向右移动，直到碰到容器边缘或另一个浮动元素。</p>
+            <div class="example-box float-example">
+                <div class="left">
+                    <h3>左侧内容</h3>
+                    <p>这是浮动在左侧的内容区块，宽度占48%。</p>
+                </div>
+                <div class="right">
+                    <h3>右侧内容</h3>
+                    <p>这是浮动在右侧的内容区块，宽度占48%。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 示例7: 定位布局 -->
+        <section>
+            <h2><i class="fa fa-map-marker"></i>7. 定位布局 (position)</h2>
+            <p>定位布局允许元素相对于其正常位置、父元素或视口进行精确定位。</p>
+            <div class="example-box position-example">
+                <div class="box top-left">左上</div>
+                <div class="box center">居中</div>
+                <div class="box bottom-right">右下</div>
+            </div>
+        </section>
+
+        <!-- 示例8: 表格布局 -->
+        <section>
+            <h2><i class="fa fa-table"></i>8. 表格布局 (display: table)</h2>
+            <p>表格布局模拟HTML表格的行为，适用于需要表格结构但语义上不是表格的内容。</p>
+            <div class="example-box table-example">
+                <div class="table-container">
+                    <div class="table-row">
+                        <div class="table-cell">表头1</div>
+                        <div class="table-cell">表头2</div>
+                        <div class="table-cell">表头3</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell">单元格1</div>
+                        <div class="table-cell">单元格2</div>
+                        <div class="table-cell">单元格3</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell">单元格4</div>
+                        <div class="table-cell">单元格5</div>
+                        <div class="table-cell">单元格6</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 示例9: 多列布局 -->
+        <section>
+            <h2><i class="fa fa-columns"></i>9. 多列布局 (columns)</h2>
+            <p>多列布局可以将内容分成多个垂直列，类似于报纸的排版方式。</p>
+            <div class="example-box columns-example">
+                <div class="content">
+                    <p>这是多列布局的示例文本。多列布局非常适合展示长文本内容，如文章、新闻等。它可以让内容更易读，同时有效利用页面空间。</p>
+                    <p>多列布局允许你指定列数、列间距和列之间的分隔线样式。内容会自动在列之间流动，填满一列后自动转到下一列。</p>
+                    <p>这种布局方式在响应式设计中也很有用，可以根据屏幕宽度自动调整列数，提供更好的阅读体验。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 示例10: 响应式布局 -->
+        <section>
+            <h2><i class="fa fa-mobile"></i>10. 响应式布局 (media queries)</h2>
+            <p>响应式布局会根据设备屏幕尺寸自动调整，在不同设备上提供最佳显示效果（尝试调整浏览器窗口大小查看效果）。</p>
+            <div class="example-box responsive-example">
+                <div class="container">
+                    <div class="sidebar">
+                        <h3>侧边栏</h3>
+                        <p>在小屏幕上会显示在顶部，大屏幕上显示在左侧。</p>
+                    </div>
+                    <div class="main-content">
+                        <h3>主内容区</h3>
+                        <p>在小屏幕上会显示在底部，大屏幕上显示在右侧，占据更多空间。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 基础CSS布局示例 | 使用原生CSS实现的10种布局技术</p>
+        </div>
+    </footer>
+</body>
+</html>
+    

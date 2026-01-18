@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10种基础css布局属性实例</title>
+</head>
+<style>
+* {
+    box-sizing: border-box;
+
+}
+div{
+    display: block;
+    unicode-bidi:isolate;
+}
+body{
+    color: rgb(39, 39, 89);
+    margin: 0;
+    padding: 0;
+    background-color: rgb(187, 193, 199);
+}
+header{
+    color: rgb(252, 252, 252);
+    margin: 0px;
+    padding: 1px;
+    text-align:center;
+    display:block;
+    unicode-bidi: isolate;
+    background-color: #27274b;
+    box-shadow: 0 2px 4px #c4c1c1;
+    margin-bottom: 30px;
+}
+.container{
+    padding:0 20px;
+    margin: 0 auto;
+    width:100%;
+    max-width: none;
+    display:block;
+    unicode-bidi: isolate;
+}
+h1{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+    font-weight: bold;
+    color: aliceblue;
+    margin-bottom: 10px;
+    display: block;
+    unicode-bidi: isolate;
+}
+p{
+    color:rgb(200, 200, 200);
+    font-size: 20px;
+}
+main{
+    display: block;
+    unicode-bidi: isolate;
+    padding-bottom: 30px;
+}
+section{
+    background-color: rgb(248, 248, 248);
+    padding: 6px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow:0 2px 4px #666;
+    width:auto;
+    display: block;
+    unicode-bidi: isolate;
+}
+section h2{
+    color:rgb(29, 31, 34);
+    font-size: 25px;
+    display: flex;
+    text-align:center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    display: flex;
+    unicode-bidi: isolate;
+    margin-inline-start: 25px;
+}
+section p{
+    margin-bottom:20px;
+    color: rgb(105, 105, 105);
+    font-size: 20px;
+    margin-inline-start:25px ;
+    display: block;
+    unicode-bidi: isolate;
+}
+.example-box{
+    border: 1px,solid,rgba(126, 125, 125,0.3);
+    margin:10px;
+    padding: 20px;
+    border-radius: 6px;
+}
+.block-example .box{
+    display: block;
+    margin:15px 0;
+    padding: 20px;
+    color: aliceblue;
+    border-radius: 4px;
+}
+.block-example .box1{
+    background-color: rgb(53, 103, 205);
+}
+.block-example .box2{
+    background-color: rgb(25, 180, 128);
+}
+.block-example .box3{
+    background-color: rgb(138, 90, 183);
+}
+
+.inline-example span{
+    margin:0px 20px;
+    padding: 8px 12px;
+    display: inline;
+    border-radius: 4px;
+    color: #fff;
+
+}
+.inline-example .item1{
+    background-color :#e84343;
+}
+.inline-example .item2{
+    background-color :#43d966;
+}
+.inline-example .item3{
+    background-color :#efef16;
+}
+.inline-example .item4{
+    background-color :#6cc5f9;
+}
+.inline-example .item5{
+    background-color :#b03fbf;
+}
+
+.inline-block-example .item{
+    display:inline-block;
+    width:100px;
+    height:100px;
+    margin:10px;
+    border-radius:4px;
+    line-height: 100px;
+    text-align: center;
+    transition:transform 0.3s;
+    transition-timing-function: ease;
+    color:#fff
+}
+.inline-block-example .item:hover {
+    transform: scale(1.05) rotate(3deg);
+}
+.inline-block-example .item1 {
+    background-color: #6cc5f9;
+}
+.inline-block-example .item2 {
+    background-color: #43d966;
+}
+.inline-block-example .item3{
+    background-color: #b03fbf;
+}
+
+.flex-example .flex-container{
+    display: flex;
+    background-color: #e8e8e8ca;
+    border-radius: 4px;
+    text-align: center;
+    min-height: 120px;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    padding: 25px;
+}
+.flex-example .flex-item{
+    width: 60px;
+    height:60px;
+    text-align: center;
+    background-color: #1c79e4;
+    line-height:60px;
+    border-radius: 4px;
+    color:white;
+    margin: 5px;
+}
+
+.grid-example .grid-container{
+    display: grid;
+    gap:15px;
+    padding: 15px;
+    grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+    background-color: #e8e8e8ca;
+
+}
+.grid-example .grid-item{
+    background-color: #43d966;
+    color:#fff;
+    text-align: center;
+    border-radius: 4px;
+    padding:15px;
+}
+
+.float-example::after{
+    content:"";
+    display: table;
+    clear: both;
+}
+.float-example .left{
+    width: 48%;
+    padding: 15px;
+    background-color: #99bfebc2;
+    float: left;
+    border-radius: 4px;
+}
+.float-example .right{
+    width:48%;
+    padding: 15px;
+    background-color: #9bc8a5e1;
+    float: right;
+    border-radius: 4px;
+}
+.float-example h3{
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    unicode-bidi: isolate;
+}
+.position-example{
+    height: 200px;
+    position: relative;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+}
+
+.position-example .box{
+    position: absolute;
+    width:80px;
+    height:80px;
+    color:white;
+    line-height: 80px;
+    border-radius: 4px;
+    text-align: center;
+}
+.position-example .top-left{
+    top:15px;
+    left:15px;
+    background-color: #1c79e4;
+}
+.position-example .center{
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background-color: #43d966;
+}
+.position-example .bottom-right{
+    bottom: 15px;
+    right: 15px;
+    background-color: #b03fbf;
+
+}
+
+.table-example .table-container{
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+}
+.table-example .table-row:first-child{
+    background-color: #c4c1c187;
+    font-weight: bold;
+    font-size: 20px;
+}
+.table-example .table-row{
+    display: table-row;
+}
+.table-example .table-cell{
+    display: table-cell;
+    padding: 12px;
+    border:1px solid #b6b6b6af;
+    text-align: center;
+}
+.table-example .table-row:nth-child(3){
+    background-color: #e5e5e5d1;
+}
+
+.columns-example .content{
+    columns: 3;
+    column-gap: 20px;
+    column-rule: 1px solid #e0e0e0;
+}
+.columns-example p{
+    margin-bottom: 20px;
+    margin-top: auto;
+}
+
+.responsive-example .container{
+    display:flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.responsive-example .sidebar{
+    background-color: #aad1e8a5;
+    padding: 20px;
+    border-radius: 4px;
+}
+.responsive-example .main-content{
+    background-color: #e2e2e298;
+    padding: 20px;
+    border-radius: 4px;
+}
+.responsive-example h3 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+}
+@media(min-width:768px) {
+    .responsive-example .container{
+        flex-direction:row;
+    }
+    .responsive-example .sidebar{
+        flex:1;
+    }
+    .responsive-example .main-content{
+        flex:3;
+    }
+}
+
+footer{
+    background-color: #27274b;
+    display: block;
+    unicode-bidi: isolate;
+    color:white;
+    text-align: center;
+    margin:0px;
+    padding: 1.5rem 0;
+}
+</style>
+<body>
+    <header>
+        <div class="container">
+            <h1>十种基础css布局属性实例</h1>
+            <p>使用原生css实现的各种布局及时展示</p>
+        </div>
+    </header>
+        <main class="container">
+            <section>
+                <h2>1.块级元素布局(display:block)</h2>
+                <p>块级元素独占一行，宽度默认填满父容器，可以设置宽高和边距。</p>
+                <div class="example-box block-example">
+                    <div class="box box1">块级元素1</div>
+                    <div class="box box2">块级元素2</div>
+                    <div class="box box3">块级元素3</div>
+                </div>
+            </section>
+            <section>
+                <h2>2.行内元素布局(display:inline)</h2>
+                <p>行内元素不独占一行，与其他行内元素并排显示，不能设置宽高。</p>
+                <div class="example-box inline-example">
+                    <span class="item1">行内元素1</span>
+                    <span class="item2">行内元素2</span>
+                    <span class="item3">行内元素3</span>
+                    <span class="item4">行内元素4</span>
+                    <span class="item5">行内元素5</span>
+                </div>
+            </section>
+            <section>
+                <h2>3.行内块布局(display:inline-block)</h2>
+                <p>行内块元素兼具行内元素和块级元素特性，可以并排显示且能设置宽高。</p>
+                <div class="example-box inline-block-example">
+                    <div class="item item1">元素1</div>
+                    <div class="item item2">元素2</div>
+                    <div class="item item3">元素3</div>
+                </div>
+            </section>
+            <section>
+                <h2>4.Flexbox布局(display:flex)</h2>
+                <p>Flexbox是一维布局模型,适合对齐和分布元素,具有强大的灵活性。</p>
+                <div class="example-box flex-example">
+                    <div class="flex-container">
+                        <div class="flex-item">1</div>
+                        <div class="flex-item">2</div>
+                        <div class="flex-item">3</div>
+                        <div class="flex-item">4</div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>5.Grid布局(display:Grid)</h2>
+                <p>Grid是二维布局模型,适合创建复杂的网格结构,能够同时处理行和列。</p>
+                <div class="example-box grid-example">
+                    <div class="grid-container">
+                        <div class="grid-item">Grid项目1</div>
+                        <div class="grid-item">Grid项目2</div>
+                        <div class="grid-item">Grid项目3</div>
+                        <div class="grid-item">Grid项目4</div>
+                        <div class="grid-item">Grid项目5</div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>6.浮动布局(float)</h2>
+                <p>浮动元素会脱离正常文档流，向左或向右移动，直到碰到容器边缘或另一个浮动元素。</p>
+                <div class="example-box float-example">
+                    <div class="left">
+                        <h3>左侧内容</h3>
+                        <p>这是浮动在左侧的内容区块,宽度占48%。</p>
+                    </div>
+                    <div class="right">
+                        <h3>右侧内容</h3>
+                        <P>这是浮动在右侧的内容区块,宽度占48%。</P>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>7.定位布局(position)</h2>
+                <p>定位布局允许元素相对于其正常位置、父元素或视口进行精确定位。</p>
+                <div class="example-box position-example">
+                    <div class="box top-left">左上</div>
+                    <div class="box center">居中</div>
+                    <div class="box bottom-right">右下</div>
+                </div>
+            </section>
+            <section>
+                <h2>8.表格布局(display:table)</h2>
+                <P>表格布局模拟HTML表格的行为,适用于需要表格结构但语义上不是表格的内容。</P>
+                <div class="example-box table-example">
+                    <div class="table-container">
+                        <div class="table-row">
+                            <div class="table-cell">表头1</div>
+                            <div class="table-cell">表头2</div>
+                            <div class="table-cell">表头3</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">单元格1</div>
+                            <div class="table-cell">单元格2</div>
+                            <div class="table-cell">单元格3</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">单元格4</div>
+                            <div class="table-cell">单元格5</div>
+                            <div class="table-cell">单元格6</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>9.多列布局(columns)</h2>
+                <P>多列布局可以将内容分成多个垂直列，类似于报纸的排版方式。</P>
+                <div class="example-box columns-example">
+                    <div class="content">
+                        <p>这是多列布局的示例文本。多列布局非常适合展示长文本内容，如文章、新闻等。它可以让内容更易读，同时有效利用页面空间。</p>
+                        <P>多列布局允许你指定列数、列间距和列之间的分隔线样式。内容会自动在列之间流动，填满一列后自动转到下一列。</P>
+                        <P>这种布局方式在响应式设计中也很有用，可以根据屏幕宽度自动调整列数，提供更好的阅读体验。</P>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>10.响应式布局(mediaqueries)</h2>
+                <P>响应式布局会根据设备屏幕尺寸自动调整，在不同设备上提供最佳显示效果（尝试调整浏览器窗口大小查看效果）。</P>
+                <div class="example-box responsive-example">
+                    <div class="container">
+                        <div class="sidebar">
+                            <h3>侧边栏</h3>
+                            <P>在小屏幕上会显示在顶部，大屏幕上显示在左侧。</P>
+                        </div>
+                        <div class="main-content">
+                            <h3>主内容区</h3>
+                            <P>在小屏幕上会显示在底部，大屏幕上显示在右侧，占据更多空间。</P>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="container">
+                <P>2023 基础CSS布局示例 | 使用原生CSS实现的10种布局技术</P>
+            </div>
+        </footer>
+    
+</body>
+</html>
