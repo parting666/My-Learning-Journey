@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing:border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            background-color: white;
+        }
+        div{
+            display: block;
+            unicode-bidi: isolate;
+        }
+        main{
+            display: block;
+            unicode-bidi: isolate;
+        }
+        .top-image{
+            background-image: url("image/weixinbackground.JPG");
+            background-size: cover;
+            height: 500px;
+            width: auto;
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .container{
+            width: 100%;
+            max-width: 1200px;
+            margin:auto;
+            padding: 0;
+        }
+        .box{
+            display: flex;
+            margin-left: 20px;
+            min-width: auto;
+            border-bottom: 1px solid #504a4a16;
+        }
+        h1{
+            color: rgba(37, 63, 124, 0.801);
+            font-weight: bold;
+            padding-bottom: 5px;
+        }
+        .text{
+            padding-bottom: 10px;
+            width:auto;
+            font-size: 20px;
+        }
+        .user1-text{
+            font-size: 15px;
+            padding: 15px;
+            border: 1px solid white;
+            background-color: #eee;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        p{
+            margin-bottom: 30px;
+            color: #6f6c6c74;
+            margin-top: 10px;
+        }
+        section{
+            margin-top: 30px;
+            width:auto; 
+        }
+        
+        .myself{
+            position: absolute;
+            bottom: 1px;
+            right:20px;
+            display: flex;
+            color: white;
+        }
+        .my-name{
+            color: white;
+            position: absolute;
+            font-weight:bold;
+            font-size:10px;
+            margin-right: 10px;
+            transform:translateY(30px) ;
+        }
+        .my-avatar{
+            width:100px;
+            height: 100px;
+            border-radius: 10px;
+            background-image:url("image/my-avatar.JPG") ;
+            background-size: cover;
+            transform: translateY(50%);
+        }
+        .users-avatar{
+           background-size:cover;
+           width: 50px;
+           height:50px;
+           max-width: 50px;
+           max-height: 50px;
+           border-radius: 5px;
+        }
+        .user1{
+           background-image: url("image/avatar.JPG"); 
+        }
+        .container .users-avatar{
+            width:50px;
+            height:50px;
+            top:15px;
+            left: 15px;
+            
+        }
+        .content{
+            margin-left:15px;
+        }
+        .user2{
+            background-image: url("image/avatar2.JPG");
+        }
+        video{
+            width: 600px;
+            height: 400px;
+        }
+        .time{
+            margin-bottom: 30px;
+            color: #6f6c6c74;
+            margin-top: 10px;
+            margin-right:10px;
+
+        }
+     @media (min-width: 768px){
+
+            .container .box{
+                flex-direction: row;
+            }
+            
+            .box .users-avatar{
+                flex: 0 0 50px;
+            }
+            .box .content {
+                flex: 3;
+            }
+     } 
+     div.user1-text:hover{
+        overflow: visible;
+     }
+     section:first-child{
+        margin-top: 80px;
+     }
+     .path{
+        display: inline;
+        color: rgba(37, 63, 124, 0.636)
+     }
+     .content p{
+        display: inline;
+     }
+     .user3{
+        background-image: url("image/avatar3.JPG");
+     }
+     .photo-container{
+        display: grid;
+        grid-template-columns:repeat(3,1fr);
+        grid-gap:10px;
+        background-size: cover;
+        padding: 10px;
+        width: 400px;
+        height: auto;
+     }
+     .photos{
+        display: grid;
+        grid-template-columns:repeat(3,1fr);
+        grid-gap:10px;
+        background-size: cover;
+        width: 100%;
+        padding-bottom: 100%;
+        object-fit: cover;
+        
+     }       
+     .photo1{
+        background-image: url("image/schoolphoto/IMG_8837.JPG");
+     }
+     .photo2{
+        background-image: url("image/schoolphoto/IMG_8838.JPG");
+     }
+     .photo3{
+        background-image: url("image/schoolphoto/IMG_8839.JPG");
+     }
+     .photo4{
+        background-image: url("image/schoolphoto/IMG_8840.JPG");
+     }
+     .photo5{
+        background-image: url("image/schoolphoto/IMG_8841.JPG");
+     }
+     .photo6{
+        background-image: url("image/schoolphoto/IMG_8842.JPG");
+     }
+     .photo7{
+        background-image: url("image/schoolphoto/IMG_8842.JPG");
+     }
+     .photo8{
+        background-image: url("image/schoolphoto/IMG_8843.JPG");
+     }
+     .photo9{
+        background-image: url("image/schoolphoto/IMG_8844.JPG");
+     }
+
+     </style>   
+</head>
+<body>
+    <div class="top-image">
+        <div class="myself">
+            <div class="my-nanme">庞大东</div>
+            <div class="my-avatar"></div>
+        </div>
+    </div>
+    <main class="container">
+        <section>
+            <div class="box">
+                <div class="users-avatar user1"></div>
+                <div class="content">
+                   <h1>比巴卜</h1>
+                   <div class="text user1-text">本人有幸喝过一次蜜雪冰城，当时一队情侣吵架 女的把杯子摔了，我正好路过溅到我嘴里一滴，至今难忘。</div>
+                   <P>31分钟前</P>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="box">
+                <div class="users-avatar user2"></div>
+                <div class="content">
+                   <h1>好运来</h1>
+                   <div class="text user2-text"> @所有人 月考范围：必修2的1-2章占比60%，其余章节和模块大概占比40%，大题：光合和呼吸综合，遗传家系电泳等，遗传实验，神经激素调节综合，基因工程</div>
+                   <video src="image/视频号内容.mp4" controls></video>
+                   <br>
+                   <span class="time">1小时前</span>
+                   <spann class="path">视频号*生物科普讲</span>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="box">
+                <div class="users-avatar user3"></div>
+                <div class="content">
+                   <h1>party</h1>
+                   <div class="text user2-text">
+                    <div>🎉深圳中心区的民生地标、建筑地标、教育地标。</div>
+                    <div>传统与创新融合的卓越高中🎉</div>
+                    <div class="path">#福田中学</div>
+                    <br>
+                    <div class=" photo-container photos">
+                        <div class="photos photo1"></div>
+                        <div class="photos photo2"></div>
+                        <div class="photos photo3"></div>
+                        <div class="photos photo4"></div>
+                        <div class="photos photo5"></div>
+                        <div class="photos photo6"></div>
+                        <div class="photos photo7"></div>
+                        <div class="photos photo8"></div>
+                        <div class="photos photo9"></div>
+                        <P>2小时前</P>
+                    </div>    
+                </div>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing:border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            background-color: white;
+        }
+        div{
+            display: block;
+            unicode-bidi: isolate;
+        }
+        main{
+            display: block;
+            unicode-bidi: isolate;
+        }
+        .top-image{
+            background-image: url("image/weixinbackground.JPG");
+            background-size: cover;
+            height: 500px;
+            width: auto;
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .container{
+            width: 100%;
+            max-width: 1200px;
+            margin:auto;
+            padding: 0;
+        }
+        .box{
+            display: flex;
+            margin-left: 20px;
+            min-width: auto;
+            border-bottom: 1px solid #504a4a16;
+        }
+        h1{
+            color: rgba(37, 63, 124, 0.801);
+            font-weight: bold;
+            padding-bottom: 5px;
+        }
+        .text{
+            padding-bottom: 10px;
+            width:auto;
+            font-size: 20px;
+        }
+        .user1-text{
+            font-size: 15px;
+            padding: 15px;
+            border: 1px solid white;
+            background-color: #eee;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        p{
+            margin-bottom: 30px;
+            color: #6f6c6c74;
+            margin-top: 10px;
+        }
+        section{
+            margin-top: 30px;
+            width:auto; 
+        }
+        
+        .myself{
+            position: absolute;
+            bottom: 1px;
+            right:20px;
+            display: flex;
+            color: white;
+        }
+        .my-name{
+            color: white;
+            position: absolute;
+            font-weight:bold;
+            font-size:10px;
+            margin-right: 10px;
+            transform:translateY(30px) ;
+        }
+        .my-avatar{
+            width:100px;
+            height: 100px;
+            border-radius: 10px;
+            background-image:url("image/my-avatar.JPG") ;
+            background-size: cover;
+            transform: translateY(50%);
+        }
+        .users-avatar{
+           background-size:cover;
+           width: 50px;
+           height:50px;
+           max-width: 50px;
+           max-height: 50px;
+           border-radius: 5px;
+        }
+        .user1{
+           background-image: url("image/avatar.JPG"); 
+        }
+        .container .users-avatar{
+            width:50px;
+            height:50px;
+            top:15px;
+            left: 15px;
+            
+        }
+        .content{
+            margin-left:15px;
+        }
+        .user2{
+            background-image: url("image/avatar2.JPG");
+        }
+        video{
+            width: 600px;
+            height: 400px;
+        }
+        .time{
+            margin-bottom: 30px;
+            color: #6f6c6c74;
+            margin-top: 10px;
+            margin-right:10px;
+
+        }
+     @media (min-width: 768px){
+
+            .container .box{
+                flex-direction: row;
+            }
+            
+            .box .users-avatar{
+                flex: 0 0 50px;
+            }
+            .box .content {
+                flex: 3;
+            }
+     } 
+     div.user1-text:hover{
+        overflow: visible;
+     }
+     section:first-child{
+        margin-top: 80px;
+     }
+     .path{
+        display: inline;
+        color: rgba(37, 63, 124, 0.636)
+     }
+     .content p{
+        display: inline;
+     }
+     .user3{
+        background-image: url("image/avatar3.JPG");
+     }
+     .photo-container{
+        display: grid;
+        grid-template-columns:repeat(3,1fr);
+        grid-gap:10px;
+        background-size: cover;
+        padding: 10px;
+        width: 400px;
+        height: auto;
+     }
+     .photos{
+        display: grid;
+        grid-template-columns:repeat(3,1fr);
+        grid-gap:10px;
+        background-size: cover;
+        width: 100%;
+        padding-bottom: 100%;
+        object-fit: cover;
+        
+     }       
+     .photo1{
+        background-image: url("image/schoolphoto/IMG_8837.JPG");
+     }
+     .photo2{
+        background-image: url("image/schoolphoto/IMG_8838.JPG");
+     }
+     .photo3{
+        background-image: url("image/schoolphoto/IMG_8839.JPG");
+     }
+     .photo4{
+        background-image: url("image/schoolphoto/IMG_8840.JPG");
+     }
+     .photo5{
+        background-image: url("image/schoolphoto/IMG_8841.JPG");
+     }
+     .photo6{
+        background-image: url("image/schoolphoto/IMG_8842.JPG");
+     }
+     .photo7{
+        background-image: url("image/schoolphoto/IMG_8842.JPG");
+     }
+     .photo8{
+        background-image: url("image/schoolphoto/IMG_8843.JPG");
+     }
+     .photo9{
+        background-image: url("image/schoolphoto/IMG_8844.JPG");
+     }
+
+     </style>   
+</head>
+<body>
+    <div class="top-image">
+        <div class="myself">
+            <div class="my-nanme">庞大东</div>
+            <div class="my-avatar"></div>
+        </div>
+    </div>
+    <main class="container">
+        <section>
+            <div class="box">
+                <div class="users-avatar user1"></div>
+                <div class="content">
+                   <h1>比巴卜</h1>
+                   <div class="text user1-text">本人有幸喝过一次蜜雪冰城，当时一队情侣吵架 女的把杯子摔了，我正好路过溅到我嘴里一滴，至今难忘。</div>
+                   <P>31分钟前</P>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="box">
+                <div class="users-avatar user2"></div>
+                <div class="content">
+                   <h1>好运来</h1>
+                   <div class="text user2-text"> @所有人 月考范围：必修2的1-2章占比60%，其余章节和模块大概占比40%，大题：光合和呼吸综合，遗传家系电泳等，遗传实验，神经激素调节综合，基因工程</div>
+                   <video src="image/视频号内容.mp4" controls></video>
+                   <br>
+                   <span class="time">1小时前</span>
+                   <spann class="path">视频号*生物科普讲</span>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="box">
+                <div class="users-avatar user3"></div>
+                <div class="content">
+                   <h1>party</h1>
+                   <div class="text user2-text">
+                    <div>🎉深圳中心区的民生地标、建筑地标、教育地标。</div>
+                    <div>传统与创新融合的卓越高中🎉</div>
+                    <div class="path">#福田中学</div>
+                    <br>
+                    <div class=" photo-container photos">
+                        <div class="photos photo1"></div>
+                        <div class="photos photo2"></div>
+                        <div class="photos photo3"></div>
+                        <div class="photos photo4"></div>
+                        <div class="photos photo5"></div>
+                        <div class="photos photo6"></div>
+                        <div class="photos photo7"></div>
+                        <div class="photos photo8"></div>
+                        <div class="photos photo9"></div>
+                        <P>2小时前</P>
+                    </div>    
+                </div>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>
