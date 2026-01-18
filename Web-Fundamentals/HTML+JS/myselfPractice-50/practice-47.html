@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>计时器：<span id="timer">0</span></p>
+    <button id="time-button">Stop</button>
+    <script>
+    let count=0;
+    const timerSpan=document.getElementById("timer");
+    const stopButton=document.getElementById("time-button");
+    const intervalId=setInterval(function(){
+        count++;
+        timerSpan.textContent=count;
+    },1000);
+    stopButton.addEventListener("click",function(){
+        clearInterval(intervalId);
+        console.log("计时器已停止");
+    })
+        
+     
+    </script>
+</body>
+</html>

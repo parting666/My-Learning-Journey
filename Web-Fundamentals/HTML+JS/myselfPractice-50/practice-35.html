@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr1 = [1, 2, 3];
+        let arr2 = [4, 5, 6];
+        let combinedArray = [...arr1, ...arr2];  
+        console.log("合并后的数组:", combinedArray);  
+
+ 
+        let obj1 = { a: 1, b: 2 };
+        let obj2 = { c: 3, d: 4 };
+        let combinedObject = { ...obj1, ...obj2 };  
+        console.log("合并后的对象:", combinedObject);  
+
+ 
+        let originalObject = { name: "苹果", color: "红色" };
+        let copiedObject = { ...originalObject };
+        console.log("拷贝的对象:", copiedObject);
+    </script>
+</body>
+</html>

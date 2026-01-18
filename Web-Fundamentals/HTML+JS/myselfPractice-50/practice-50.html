@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+function fetchUser() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve({ id: 1, username: "AsyncUser" });
+    }, 2000);
+  });
+}
+
+async function displayUser() {
+  try {
+    console.log("开始获取用户...");
+    const user = await fetchUser();
+    console.log(`用户名: ${user.username}`);
+  } catch (error) {
+    console.error("获取用户失败:", error);
+  }
+}
+
+displayUser();
+console.log("displayUser 函数已调用，但会等待 await 完成。");
+    </script>
+</body>
+</html>

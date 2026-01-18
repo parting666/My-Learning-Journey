@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="my-form">
+        <input type="text" placeholder="输入一些内容">
+        <button type="submit">提交</button>
+    </form>
+    <script>
+       const form=document.getElementById("my-form");
+       form.addEventListener("submit",function(event){
+        event.preventDefault();
+        alert('表单提交被阻止了！');
+       })
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mouse-area" style="width: 200px; height: 100px; border: 1px solid black;"></div>
+    <p id="coords"></p>
+    <script>
+        const mouseArea=document.getElementById("mouse-area");
+        const coordsDisplay=document.getElementById("coords");
+        mouseArea.addEventListener("mousemove",function(event){
+            coordsDisplay.textContent=`鼠标坐标X=${event.clientX} Y=${event.clientY}`;
+        }); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="username">用户名:</label>
+    <input type="text" id="username">
+    <p>你输入的是: <span id="output"></span></p>
+    <script>
+    const usersNameInput=document.getElementById("username");
+    const outputSpan=document.getElementById("output");
+    usersNameInput.addEventListener("input",function(event){
+        outputSpan.textContent=event.target.value; 
+
+    })
+    </script>
+</body>
+</html>

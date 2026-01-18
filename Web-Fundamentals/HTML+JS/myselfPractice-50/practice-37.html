@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li class="list-item">项目 1</li>
+        <li class="list-item">项目 2</li>
+        <li>项目 3</li>
+      </ul>
+    <script>
+         const listItems = document.getElementsByClassName("list-item"); 
+         for (let i = 0; i < listItems.length; i++) {
+         listItems[i].style.fontWeight = "thin";
+         listItems[i].style.color="blue";
+         } 
+
+         const allListItems = document.getElementsByTagName("li");
+         console.log("总共有", allListItems.length, "个列表项。");
+    </script>
+</body>
+</html>

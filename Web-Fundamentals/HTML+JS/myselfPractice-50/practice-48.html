@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+   
+function fetchData(callback) {
+  console.log("开始获取数据...");
+  setTimeout(function() {
+    const data = { name: "服务器数据", value: 123 };
+    console.log("数据获取成功！");
+    callback(data);
+  }, 2000);
+}
+
+function processData(data) {
+  console.log("正在处理数据:", data);
+}
+fetchData(processData);
+    </script>
+</body>
+</html>

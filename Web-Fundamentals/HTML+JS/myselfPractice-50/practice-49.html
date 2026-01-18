@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+    
+const myPromise = new Promise((resolve, reject) => {
+  let operationSuccessful = true; // 切换这个值来看不同结果
+  console.log("Promise 开始执行...");
+
+  setTimeout(() => {
+    if (operationSuccessful) {
+      resolve("操作成功！这是结果数据。");
+    } else {
+      reject("操作失败！出了点问题。");
+    }
+  }, 2000);
+});
+
+myPromise
+  .then((successMessage) => {
+    console.log("Promise 成功:", successMessage);
+  })
+
+  .catch((errorMessage) => {
+    console.error("Promise 失败:", errorMessage);
+  });
+    </script>
+</body>
+</html>

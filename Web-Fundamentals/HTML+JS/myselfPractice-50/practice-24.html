@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let globalVar = "我是一个全局变量";
+        function testScope() {
+        let localVar = "我是一个局部变量";
+        console.log(localVar);  
+         console.log(globalVar);  
+}
+
+      testScope();
+
+      console.log(localVar); 
+    </script>
+</body>
+</html>

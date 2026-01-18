@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let price=[10,20,30,40];
+       let total=price.reduce(function(accumulater,currentValue){
+        return accumulater+currentValue;
+       },0)
+       console.log("总价：",total);
+    </script>
+</body>
+</html>

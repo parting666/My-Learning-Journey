@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <div id="main-content"></div>
+    <script>
+       const maincontent=document.getElementById("main-content");
+       const newHeading=document.createElement("h2");
+       newHeading.textContent="这是一段新的内容。";
+       maincontent.appendChild(newHeading);
+
+       const newParagraph=document.createElement("p");
+       newParagraph.textContent="这是动态添加的新段落";
+       maincontent.appendChild(newParagraph);
+    </script>
+</body>
+</html>
