@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>今日新闻</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  .container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  .news-list {
+    flex: 1;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  .news-list h2 {
+    font-size: 1.8em;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 0;
+  }
+  .news-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .news-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .news-list li:hover {
+    background-color: #f9f9f9;
+  }
+  .news-list li a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+  }
+  .news-list li p {
+      margin: 5px 0 0;
+      font-size: 0.9em;
+      color: #666;
+  }
+  .news-detail {
+    flex: 2;
+    padding: 20px;
+  }
+  .news-detail h1 {
+    font-size: 2.2em;
+    margin-top: 0;
+    color: #333;
+  }
+  .news-detail .meta {
+      font-size: 0.9em;
+      color: #888;
+      margin-bottom: 20px;
+  }
+  .news-detail img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+      margin-bottom: 20px;
+  }
+  .news-detail p {
+    font-size: 1.1em;
+    text-align: justify;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="news-list">
+    <h2>新闻列表</h2>
+    <ul>
+      <li>
+        <a href="#detail">Tanjong Katong路面塌陷：当局将进行独立调查</a>
+        <p>新加坡建设局将对Tanjong Katong路面塌陷事件进行独立调查，以确定事故原因并检视现有安全措施。</p>
+      </li>
+      <li>
+        <a href="#">女老板发文指控员工骗取工伤赔偿后身亡</a>
+        <p>本地餐饮业女老板在社交媒体上公开指控其印籍员工伪造工伤以骗取赔偿金后，被发现非正常死亡。</p>
+      </li>
+      <li>
+        <a href="#">泰国与柬埔寨同意立即无条件停火</a>
+        <p>经过数日的边境冲突后，泰国和柬埔寨领导人同意立即无条件停火，以缓解紧张局势。</p>
+      </li>
+      <li>
+        <a href="#">Chromebook采购丑闻：涉案人员最后现身新加坡</a>
+        <p>印度尼西亚一宗涉及教育部Chromebook采购的腐败案，其中一名关键嫌疑人据报最后在新加坡被发现。</p>
+      </li>
+        <li>
+        <a href="#">加沙冲突持续，多国发表联合声明呼吁立即停火</a>
+        <p>包括英国、加拿大在内的28个国家发表联合声明，称加沙的苦难已达新深度，战争必须立即结束。</p>
+      </li>
+    </ul>
+  </div>
+  <div id="detail" class="news-detail">
+    <h1>Tanjong Katong路面塌陷：当局将进行独立调查</h1>
+    <p class="meta">发布于：2025年7月28日</p>
+    <img src="https://via.placeholder.com/600x400.png?text=Tanjong+Katong+Sinkhole" alt="Tanjong Katong路面塌陷示意图">
+    <p>新加坡Tanjong Katong路段日前发生严重的路面塌陷事件，导致一辆汽车掉入坑中。新加坡建设局（BCA）今天宣布将对此事件展开独立的深入调查，以查明事故的确切原因，并对现有的工程安全规程进行全面检讨。</p>
+    <p>初步报告显示，该路面塌陷可能与附近正在进行的深层排污隧道系统（DTSS）的工程有关。公用事业局（PUB）已下令暂停该地区所有相关的隧道工程，并进行紧急安全检查。幸运的是，坠入坑中的司机被热心路人和外籍劳工及时救出，仅受轻伤。</p>
+    <p>交通部长表示，政府非常重视此次事件，将彻查所有可能导致事故的因素，包括施工方法、地质条件以及监督流程等。他强调，确保公共基础设施的安全是首要任务，任何不合规的行为都将受到严厉追究。当局也提醒公众在此期间绕行该路段，并留意最新的交通信息。</p>
+    <p>此次事件也引发了公众对城市地下工程安全性的广泛关注。专家指出，随着城市化进程的加快，地下空间的开发日益复杂，必须采用更先进的监测技术和更严格的安全标准，以预防类似事件的再次发生。</p>
+  </div>
+</div>
+
+</body>
+</html>
