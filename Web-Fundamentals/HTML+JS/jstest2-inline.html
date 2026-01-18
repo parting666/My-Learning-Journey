@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+</head>
+<body>
+    <ul>
+        <li class="list-item">项目 1</li>
+        <li class="list-item">项目 2</li>
+        <li>项目 3</li>
+      </ul>
+      <script>
+        // getElementsByClassName 返回一个 HTMLCollection (类似数组的对象)
+        const listItems = document.getElementsByClassName("list-item");
+
+        console.log(" listItems :",listItems );
+
+       // 遍历这个集合，并修改每个元素的样式
+        for (let i = 0; i < listItems.length; i++) {
+        listItems[i].style.fontWeight = "bold";
+        listItems[i].style.color = "pink";
+        listItems[i].textContent = "这段文字被 JavaScript 修改了！"+i;
+        console.log("总共有", listItems.length, "现在是个列表项。",i);
+        }
+
+      // getElementsByTagName 同样返回一个 HTMLCollection
+    const allListItems = document.getElementsByTagName("li");
+    console.log("总共有", allListItems.length, "个列表项。");
+    </script>
+</body>
+</html>
