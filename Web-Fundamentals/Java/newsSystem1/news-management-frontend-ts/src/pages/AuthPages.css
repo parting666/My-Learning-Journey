@@ -1,0 +1,32 @@
+/* Auth Pages Styles */
+.auth-container {
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.auth-card {
+    background: var(--surface-bg);
+    padding: 30px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
+}
+
+.auth-card h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.auth-footer a {
+    font-weight: 600;
+}
