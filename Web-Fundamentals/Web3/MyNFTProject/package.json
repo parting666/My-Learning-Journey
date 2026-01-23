@@ -1,0 +1,25 @@
+{
+  "name": "mynftproject",
+  "version": "1.0.0",
+  "description": "A flexible, multi-chain ERC721 NFT deployment project.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "hardhat compile",
+    "ipfs:batchUpload":"node scripts/batchUpload.js",
+    "deploy:localhost": "npx hardhat run scripts/deploy.js --network localhost",
+    "deploy:sepolia": "npx hardhat run scripts/deploy.js --network sepolia",
+    "deploy:polygonAmoy": "npx hardhat run scripts/deploy.js --network polygonAmoy",
+    "deploy:all": "npm run deploy:localhost && npm run deploy:sepolia && npm run deploy:polygonAmoy",
+    "batchMint":"npx hardhat run  scripts/batchMint.js  --network polygonAmoy"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "axios": "^1.7.2",
+    "dotenv": "^16.4.5",
+    "form-data": "^4.0.0",
+    "hardhat": "^2.22.5"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.2"
+  }
+}
