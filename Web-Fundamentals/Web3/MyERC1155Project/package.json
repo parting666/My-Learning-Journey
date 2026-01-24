@@ -1,0 +1,28 @@
+{
+  "name": "my-erc20-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "hardhat compile",
+    "deploy:amoy": "npx hardhat run scripts/deploy.js --network amoy",
+    "deploy:base": "npx hardhat run scripts/deploy.js --network base-sepolia",
+    "deploy:bsc": "npx hardhat run scripts/deploy.js --network bsc_testnet",
+    "deploy:all": "npm run deploy:amoy && npm run deploy:base && npm run deploy:bsc",
+    "batchTransfer": "npx hardhat run scripts/batchTransfer.js --network amoy",
+    "batchMint": "npx hardhat run scripts/batchMint.js --network amoy",
+    "batchUpload": "npx hardhat run scripts/batchUpload.js --network amoy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.5"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.1",
+    "dotenv": "^16.3.1"
+  }
+}
