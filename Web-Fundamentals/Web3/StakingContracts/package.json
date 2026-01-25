@@ -1,0 +1,32 @@
+{
+  "name": "staking-contracts",
+  "version": "1.0.0",
+  "description": "A complete staking contract system with ERC20 tokens and rewards",
+  "main": "index.js",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:localhost": "hardhat run scripts/deploy.js --network localhost",
+    "deploy:sepolia": "hardhat run scripts/deploy.js --network sepolia",
+    "deploy:amoy": "hardhat run scripts/deploy.js --network amoy",
+    "stake:localhost": "hardhat run scripts/stake.js --network localhost",
+    "stake:amoy": "hardhat run scripts/stake.js --network amoy",
+    "node": "hardhat node"
+  },
+  "keywords": [
+    "staking",
+    "defi",
+    "ethereum",
+    "solidity"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "hardhat": "^2.19.4"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.1",
+    "dotenv": "^17.2.3"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "network": "amoy",
+  "deployer": "0x82851921b79CF77aDD31f2EED9ef3dAA71AF559A",
+  "timestamp": "2026-01-25T08:23:55.412Z",
+  "contracts": {
+    "StakingToken": {
+      "address": "0xd8e2fC32F05a24975B4E88e9C40e6c6233c832b1",
+      "name": "Party Token",
+      "symbol": "PT"
+    },
+    "RewardsToken": {
+      "address": "0x0887ff0e15a5849d0232d8b671C6B81EFf16b0C4",
+      "name": "Party Rewards Token",
+      "symbol": "PRT"
+    },
+    "StakingRewards": {
+      "address": "0xfE71806D752acCd66Bd2F05D84560443A9E847ff",
+      "rewardRate": "100000000000000"
+    },
+    "StakingFactory": {
+      "address": "0x32FaE653EC090C2F062b1d6A321A0EDbcb4ba920"
+    }
+  }
+}
