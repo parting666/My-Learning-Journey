@@ -1,0 +1,24 @@
+{
+  "network": "amoy",
+  "deployer": "0xYourDeployerAddressHere",
+  "timestamp": "2024-01-01T00:00:00.000Z",
+  "contracts": {
+    "StakingToken": {
+      "address": "0xYourContractAddressHere",
+      "name": "Party Token",
+      "symbol": "PT"
+    },
+    "RewardsToken": {
+      "address": "0xYourContractAddressHere",
+      "name": "Party Rewards Token",
+      "symbol": "PRT"
+    },
+    "StakingRewards": {
+      "address": "0xYourContractAddressHere",
+      "rewardRate": "100000000000000"
+    },
+    "StakingFactory": {
+      "address": "0xYourContractAddressHere"
+    }
+  }
+}

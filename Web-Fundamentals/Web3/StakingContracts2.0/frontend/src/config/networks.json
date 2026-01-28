@@ -1,0 +1,21 @@
+{
+  "31337": {
+    "name": "hardhat",
+    "stakingFactory": "0xYourContractAddressHere",
+    "stakingToken": "0xYourContractAddressHere",
+    "rewardsToken": "0xYourContractAddressHere",
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  },
+  "80002": {
+    "name": "amoy",
+    "stakingFactory": "0xYourContractAddressHere",
+    "stakingToken": "0xYourContractAddressHere",
+    "rewardsToken": "0xYourContractAddressHere",
+    "testERC721": "0xYourContractAddressHere",
+    "testERC1155": "0xYourContractAddressHere",
+    "defaultPool": "0xYourContractAddressHere",
+    "default721Pool": "0xYourContractAddressHere",
+    "default1155Pool": "0xYourContractAddressHere",
+    "lastUpdated": "2024-01-01T00:00:00.000Z"
+  }
+}
