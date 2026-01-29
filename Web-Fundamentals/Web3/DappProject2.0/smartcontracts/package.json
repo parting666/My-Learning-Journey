@@ -1,0 +1,38 @@
+{
+  "name": "smartcontracts",
+  "version": "1.0.0",
+  "description": "Multi-chain smart contract deployment for ERC20, ERC721, and ERC1155 tokens",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "hardhat test",
+    "compile": "hardhat compile",
+    "deploy:erc20": "hardhat run scripts/deploy-erc20.js",
+    "deploy:erc721": "hardhat run scripts/deploy-erc721.js",
+    "deploy:erc1155": "hardhat run scripts/deploy-erc1155.js",
+    "deploy:all": "hardhat run scripts/deploy-all.js",
+    "deploy:factory": "hardhat run scripts/deploy-factory.js",
+    "verify": "hardhat run scripts/verify-contract.js"
+  },
+  "keywords": [
+    "ethereum",
+    "smart-contracts",
+    "erc20",
+    "erc721",
+    "erc1155",
+    "multi-chain"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.4.0",
+    "dotenv": "^16.3.1"
+  }
+}
